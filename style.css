@@ -5,7 +5,7 @@
 }
 
 body {
-    height: 100vh;
+    min-height: 100vh;
     margin: 0px;
     padding: 0px;
     display: flex;
@@ -14,8 +14,8 @@ body {
 }
 
 #grid {
-    height: 338px; 
-    width: 588px;
+    height: 336px; 
+    width: 336px;
     margin: 0px;
     padding: 0px;
     border: 1px black solid;
@@ -26,7 +26,7 @@ body {
     /* flex-direction: column; */
     justify-content: space-between;
     align-items: center;
-    margin: 30px;
+    margin: 15px;
     height: 460px;
     width: 900px;
     border: 1px black solid;
@@ -106,7 +106,7 @@ button {
     font-family: sans-serif;
     text-align: center;
     font-size: 16px;
-    margin: 0px;
+    margin-top: auto;
     padding: 10px;
     width: 100%;
 }
