@@ -1,0 +1,127 @@
+*{
+    margin: 0px;
+    padding: 0px;
+
+}
+
+body {
+    height: 100vh;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#grid {
+    height: 338px; 
+    width: 588px;
+    margin: 0px;
+    padding: 0px;
+    border: 1px black solid;
+}
+
+.box {
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px;
+    height: 460px;
+    width: 900px;
+    border: 1px black solid;
+}
+
+.title-div {
+    width: 608px;
+    margin: 0px;
+    text-align: center;
+    align-items: center;
+    border: 1px red solid;
+}
+
+.pickers,
+.sketch {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.pickers {
+    justify-content: space-evenly;
+    margin: 0;
+    height: 460px;
+    width: 200px;
+    border: 1px purple solid; 
+}
+
+.sketch {
+    margin: 0;
+    border: 1px rgb(48, 37, 198) solid;
+}
+
+.selection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    /* width: 200px; */
+    border: 1px darkgrey solid;
+}
+
+.canvas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 360px; 
+    width: 608px;
+} 
+
+.under-canvas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 608px;
+    border: 1px red solid;
+}
+
+.shake-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* width: 520px; */
+    border: 1px darkgray solid;
+} 
+
+button {
+    width: 100px;
+    height: 58px;
+    border-radius: 20px;
+}
+
+
+.footer {
+    background-color: #FFF09B;
+    font-family: sans-serif;
+    text-align: center;
+    font-size: 16px;
+    margin: 0px;
+    padding: 10px;
+    width: 100%;
+}
+
+.my-info,
+.imgAttrib {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+    height: 28px;
+}
+
+.github-logo {
+    width: 40px;
+    margin-top: 10px;
+    margin-left: 15px;
+}
