@@ -18,9 +18,10 @@
             <div class="slidecontainer">
                 <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
               </div>
-              
+
             <div class="selection">
-                <button class="color-picker">Color Picker</button>
+                <label for="colorInput">Color Picker</label>
+                <input type="color" id="color-picker">
             </div>
 
             <div class="selection">
@@ -47,12 +48,20 @@
             </div>
 
             <div class="canvas">
-                <canvas id="grid"></canvas>
+                <div id="guide"></div>
+
+                <canvas width="368" height="368" id="grid"></canvas>
+
+                <div class="show-guide">
+
+                    <label for="toggleGuide"> Show Guide: </label>
+                    <input type="checkbox" id="toggle-guide" checked>
+                </div>
             </div>
 
             <div class="under-canvas">
-                <div class="shake">
-                    <button class="shake">Shake</button>
+                <div class="clear">
+                    <button type="button" id="clear-btn">Clear</button>
                 </div>
             </div>
 
@@ -66,7 +75,7 @@
             <p class="my-copyright">Jenn Guneratne © 2022 </p>
             
             <a href="https://github.com/jguneratne/rock-paper-scissors" target="_blank" rel="noopener noreferrer">
-                <img class="github-logo" src="./images/Octocat.jpg" alt="Octocat GitHub Logo">
+                <img class="github-logo" src="./images/GitHub-Mark-32px.png" alt="Octocat GitHub Logo">
         </div> 
 
     
