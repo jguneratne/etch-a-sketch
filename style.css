@@ -14,11 +14,27 @@ body {
 }
 
 #grid {
-    height: 384px; 
-    width: 384px;
+    height: 368px; 
+    width: 368px;
     margin: 0px;
+    /* margin-top: 28px; */
     padding: 0px;
     border: 1px black solid;
+    background-size: 100%;
+    cursor: pointer;
+}
+
+#guide {
+    display: grid;
+    position: absolute;  /* Allows guide to overlay canvas */
+    pointer-events: none; /* Make pointer events fall back to canvas */
+    margin: 0px;
+    padding: 0px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#guide div {
+    border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .box {
@@ -27,7 +43,7 @@ body {
     justify-content: space-between;
     align-items: center;
     margin: 15px;
-    height: 500px;
+    height: 518px;
     width: 900px;
     border: 1px black solid;
 }
@@ -44,21 +60,20 @@ body {
 .sketch {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    height: 518px;
 }
 
 .pickers {
     justify-content: space-evenly;
     margin: 0;
-    height: 500px;
     width: 200px;
     border: 1px purple solid; 
 }
 
 .sketch {
+    justify-content: space-between;
     margin: 0;
-    height: 500px;
     border: 1px rgb(48, 37, 198) solid;
 }
 
@@ -73,21 +88,30 @@ body {
 
 .canvas {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 402px; 
     width: 608px;
+    margin-top: 6px;
 } 
 
 .under-canvas {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-around;
     align-items: center;
     width: 608px;
     border: 1px red solid;
 }
 
-.shake-btn {
+.show-guide {
+    border: 1px aquamarine solid;
+    margin: 10px;
+    width: 508;
+}
+
+.clear-btn {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -122,7 +146,7 @@ button {
 }
 
 .github-logo {
-    width: 40px;
+    width: 30px;
     margin-top: 10px;
     margin-left: 15px;
 }
