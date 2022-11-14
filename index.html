@@ -16,7 +16,8 @@
         <div class="pickers">
 
             <div class="slidecontainer">
-                <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                <input type="range" min="16" max="160" step="16" value="16" class="slider" id="grid-range">
+                <p>Grid Size: <span id="grid-value"></span></p>
               </div>
 
             <div class="selection">
@@ -48,7 +49,7 @@
             </div>
 
             <div class="canvas-div">
-                <div id="guide" class="guide"></div>
+                <div id="guide" class="guide-lines"></div>
 
                 <canvas width="368" height="368" id="canvas"></canvas>
             </div>

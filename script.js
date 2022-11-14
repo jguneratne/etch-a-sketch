@@ -2,30 +2,30 @@
  * @type HTMLCanvasElement
  */
 
-// Global variables, targeting canvas, guides and buttons
+// GLOBAL VARIABLES (target canvas, guides and buttons)
 
 let canvas = document.getElementById('canvas');
+let ctx = canvas.getContext('2d');
 let guideLines = document.getElementById('guide');
 let colorPicker = document.getElementById('color-picker');
 let toggleGuide = document.getElementById('toggleOnOff');
 let clearBtn = document.getElementById('clear-btn');
 
-let ctx = canvas.getContext('2d');
-
-// Initialize canvas background default color
-ctx.fillStyle = '#ffffff';
-ctx.fillRect(0, 0, canvas.width, canvas.height);
 
 // Set dimensions for grid
-let cellCount = 16;
+//let cellCount = 16;
 
-// Functions
 
-function makeGrid() {
+// FUNCTIONS
+
+function makeGrid(cellCount) {
 
     let columns = cellCount;
     let rows = cellCount;
 
+    // Initialize canvas background default color
+    ctx.fillStyle = '#ffffff';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     //Setup the guide lines
     for(let i = 0; i < columns; i++) {
@@ -38,22 +38,27 @@ function makeGrid() {
             row.classList.add('row');
             column.appendChild(row);
         }
-        
     }
 
 }
 
-//  function rangeSliderControl() {
-//     let slider = document.getElementById('grid-range');
-//     let output = document.getElementById('grid-size');
 
-//     output.innerHTML = slider.value; 
+ function rangeSliderControl() {
+    let slider = document.getElementById('grid-range');
+    let output = document.getElementById('grid-value');
+    let cellCount = slider.value;
 
-//     slider.oninput = function() {
-//         output.innerHTML = this.value;
-//     }
+    output.textContent = `${slider.value} x ${slider.value}`;
 
-// }
+    slider.oninput = function() {
+        output.textContent = `${this.value} x ${this.value}`;
+    }
+
+    makeGrid(cellCount);
+
+    //return output;
+    
+}
 
 
 // function toggleGuideSwitch() {
@@ -65,7 +70,7 @@ function makeGrid() {
 //guide.addEventListener('change', toggleGuideSwitch);
 
 
-// Call functions
+// CALL FUNCTIONS
 
 makeGrid();
-//rangeSliderControl();
+rangeSliderControl();
