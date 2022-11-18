@@ -12,10 +12,6 @@ let toggleGuide = document.getElementById('toggleOnOff');
 let clearBtn = document.getElementById('clear-btn');
 
 
-// Set dimensions for grid
-//let cellCount = 16;
-
-
 // FUNCTIONS
 
 function makeGrid(cellCount) {
@@ -39,7 +35,6 @@ function makeGrid(cellCount) {
             column.appendChild(row);
         }
     }
-
 }
 
 
@@ -54,10 +49,15 @@ function makeGrid(cellCount) {
         output.textContent = `${this.value} x ${this.value}`;
     }
 
-    makeGrid(cellCount);
 
-    //return output;
+    slider.addEventListener('input', function() {
+        guideLines.innerHTML = ""
+        makeGrid(slider.value);
+
+    })
     
+
+    makeGrid(cellCount);
 }
 
 
