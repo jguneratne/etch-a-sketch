@@ -1,12 +1,9 @@
-/**
- * @type HTMLCanvasElement
- */
-
-// GLOBAL VARIABLES (target canvas, guides and buttons)
+// GLOBAL VARIABLES
 
 let canvas = document.getElementsByClassName('.canvas-div');
 let guideLines = document.getElementById('guide');
 let colorPicker = document.getElementById('color-picker');
+let greyScale = document.getElementsByClassName('grey');
 let toggleGuide = document.getElementById('toggleOnOff');
 let clearBtn = document.getElementById('clear-btn');
 
@@ -27,11 +24,20 @@ function makeGrid(cellCount) {
         for(let j = 0; j < rows; j++) {
             let row = document.createElement('div');
             row.classList.add('row');
-            row.addEventListener('mouseover', function() {row.style.background = colorPicker.value;});
             column.appendChild(row);
+
+            colorPicker.addEventListener('click', function(event) {
+                if (event.target.matches('#color-picker')) {
+                    row.addEventListener('pointerdown', draw);
+                }
+
+            draw(row);
+            })
         }
     }
+    
 }
+
 
 
  function rangeSliderControl() {
@@ -57,25 +63,26 @@ function makeGrid(cellCount) {
 }
 
 
+ function draw(row) {
 
-// function colorPickerFill() {
+     row.addEventListener('pointermove', function(event){
+        if(event.target.matches('.row')) {
+            row.style.background = colorPicker.value;
+        }
+    })
+}
 
-//     let cellDraw = document.querySelector('div.row');
-    
-//     guideLines.addEventListener('mousedown', function(e) {
-//         if (e.target.matches('div.row')) {
-//             cellDraw.style.background = colorPicker.value;
-//         }
-//     })
 
-//     guideLines.addEventListener('mousemove', function(e) {
-//         if (e.target.matches ('div.row')) {
-//             cellDraw.style.background = colorPicker.value;
-//         }
-//     })
+
+// function greyScaleButton() {
+
+//     let greyArray = [0x000000, 0x0a0a0a, 0x141414, 0x1e1e1e, 0x282828, 0x323232, 0x3b3b3b, 0x454545, 0x4f4f4f, 0x595959, 0x636363, 0x6c6c6c, 0x767676, 0x808080, 0x8a8a8a, 0x949494, 0x9d9d9d, 0xa7a7a7, 0xb1b1b1, 0xbbbbbb, 0xc5c5c5, 0xcecece, 0xd8d8d8, 0xe2e2e2, 0xececec, 0xf6f6f6];
+
+//     greyScale = greyArray[Math.floor(Math.random() * greyArray.length)];
+
+//     console.log(greyScale);
+//     //return greyScale; 
 // }
-
-
 
 
 //function toggleGuideSwitch() {
@@ -98,4 +105,4 @@ function makeGrid(cellCount) {
 
 makeGrid();
 rangeSliderControl();
-//colorPickerFill();
+//greyScaleButton()
