@@ -1,16 +1,13 @@
 // GLOBAL VARIABLES 
     // Target elements
 
-let canvas = document.getElementsByClassName('.canvas-div');
-let guideLines = document.getElementById('guide');
-let colorPicker = document.getElementById('color-picker');
-let greyScale = document.getElementsByClassName('grey');
-let toggleGuideBtn = document.getElementById('toggleOnOff');
-let clearBtn = document.getElementById('clear-btn');
+const canvas = document.getElementsByClassName('.canvas-div');
+const guideLines = document.getElementById('guide');
+const toggleGuideBtn = document.getElementById('toggleOnOff');
+const clearBtn = document.getElementById('clear-btn');
 
     // Variables for drawing
 
-let color = colorPicker.value; 
 let pointerDown = false;
 
 
@@ -79,11 +76,23 @@ guideLines.onpointerleave = () => pointerDown = false;
 
 
  function draw() {
+
+    const colorPicker = document.getElementById('color-picker');
+    let greyScale = document.getElementsByClassName('grey');
+    const rainbow = document.getElementsByClassName('rainbow');
+    const eraser = document.getElementsByClassName('eraser');
+
     if(!pointerDown) return;
 
-    if(pointerDown) {
+    if((pointerDown) && (colorPicker.clicked == true)) {
         this.style.backgroundColor = colorPicker.value;
-    }
+    } else if ((pointerDown) && (rainbow.clicked == true)) {
+        let randomColor = Math.floor(Math.random()*16777215).toString(16);
+        this.style.backgroundColor = '#' + randomColor;
+    } else if ((pointerDown) && (eraser.clicked = true)) {
+            this.style.backgroundColor = 'white';
+    } 
+            
 };
 
 
