@@ -1,4 +1,5 @@
-// GLOBAL VARIABLES
+// GLOBAL VARIABLES 
+    // Target elements
 
 let canvas = document.getElementsByClassName('.canvas-div');
 let guideLines = document.getElementById('guide');
@@ -7,8 +8,15 @@ let greyScale = document.getElementsByClassName('grey');
 let toggleGuide = document.getElementById('toggleOnOff');
 let clearBtn = document.getElementById('clear-btn');
 
+    // Variables for drawing
+
+let color = colorPicker.value; 
+let pointerDown = true;
+
 
 // FUNCTIONS
+
+    // Grid size functions
 
 function makeGrid(cellCount) {
 
@@ -26,19 +34,13 @@ function makeGrid(cellCount) {
             row.classList.add('row');
             column.appendChild(row);
 
-            colorPicker.addEventListener('click', function(event) {
-                if (event.target.matches('#color-picker')) {
-                    row.addEventListener('pointerdown', draw);
-                }
+            row.addEventListener('pointerover', draw);
+            row.style.backgroundColor = 'white';
 
-            draw(row);
-            })
         }
     }
     
-}
-
-
+};
 
  function rangeSliderControl() {
     let slider = document.getElementById('grid-range');
@@ -51,26 +53,30 @@ function makeGrid(cellCount) {
         output.textContent = `${this.value} x ${this.value}`;
     }
 
-
     slider.addEventListener('input', function() {
         guideLines.innerHTML = ""
         makeGrid(slider.value);
 
     })
-    
 
     makeGrid(cellCount);
-}
+};
+
+    // Drawing Functions
+
+guideLines.onpointerenter = () => pointerDown = false;
+guideLines.onpointerdown = () => pointerDown = true;
+guideLines.onpointerup = () => pointerDown = false;
+guideLines.onpointerleave = () => pointerDown = false;
 
 
- function draw(row) {
+ function draw() {
+    if(!pointerDown) return;
 
-     row.addEventListener('pointermove', function(event){
-        if(event.target.matches('.row')) {
-            row.style.background = colorPicker.value;
-        }
-    })
-}
+    if(pointerDown) {
+        this.style.backgroundColor = colorPicker.value;
+    }
+};
 
 
 
@@ -95,7 +101,7 @@ function makeGrid(cellCount) {
 
 
 
-// Event Listeners
+// EVENT LISTENERS
 
 //guideLines.addEventListener('change', toggleGuideSwitch);
 
