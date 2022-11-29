@@ -5,18 +5,18 @@ let canvas = document.getElementsByClassName('.canvas-div');
 let guideLines = document.getElementById('guide');
 let colorPicker = document.getElementById('color-picker');
 let greyScale = document.getElementsByClassName('grey');
-let toggleGuide = document.getElementById('toggleOnOff');
+let toggleGuideBtn = document.getElementById('toggleOnOff');
 let clearBtn = document.getElementById('clear-btn');
 
     // Variables for drawing
 
 let color = colorPicker.value; 
-let pointerDown = true;
+let pointerDown = false;
 
 
 // FUNCTIONS
 
-    // Grid size functions
+    // Grid functions - create, resize, toggle guides
 
 function makeGrid(cellCount) {
 
@@ -26,20 +26,27 @@ function makeGrid(cellCount) {
     //Setup the guide lines
     for(let i = 0; i < columns; i++) {
         let column = document.createElement('div');
-        column.classList.add('column');
+        column.classList.add('column' , 'column-border');
         guideLines.appendChild(column);
 
+        toggleGuideBtn.addEventListener('pointerdown', function() {
+            column.classList.toggle('column-border');
+        });
+
         for(let j = 0; j < rows; j++) {
-            let row = document.createElement('div');
-            row.classList.add('row');
+            let row = document.createElement('div'); 
+            row.classList.add('row', 'row-border');
             column.appendChild(row);
+
+            toggleGuideBtn.addEventListener('pointerdown', function() {
+                row.classList.toggle('row-border');
+            });
 
             row.addEventListener('pointerover', draw);
             row.style.backgroundColor = 'white';
 
         }
     }
-    
 };
 
  function rangeSliderControl() {
@@ -62,9 +69,10 @@ function makeGrid(cellCount) {
     makeGrid(cellCount);
 };
 
+
+
     // Drawing Functions
 
-guideLines.onpointerenter = () => pointerDown = false;
 guideLines.onpointerdown = () => pointerDown = true;
 guideLines.onpointerup = () => pointerDown = false;
 guideLines.onpointerleave = () => pointerDown = false;
@@ -89,22 +97,6 @@ guideLines.onpointerleave = () => pointerDown = false;
 //     console.log(greyScale);
 //     //return greyScale; 
 // }
-
-
-//function toggleGuideSwitch() {
-//     div.guideLines.style.display = toggleGuide.checked ? null : "none";
-
-    //div.column.toggle('remove');
-    //div.row.toggle('remove');
-//}
-
-
-
-
-// EVENT LISTENERS
-
-//guideLines.addEventListener('change', toggleGuideSwitch);
-
 
 
 // CALL FUNCTIONS
