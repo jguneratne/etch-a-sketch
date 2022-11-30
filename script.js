@@ -84,14 +84,16 @@ guideLines.onpointerleave = () => pointerDown = false;
 
     if(!pointerDown) return;
 
-    if((pointerDown) && (colorPicker.clicked == true)) {
-        this.style.backgroundColor = colorPicker.value;
-    } else if ((pointerDown) && (rainbow.clicked == true)) {
-        let randomColor = Math.floor(Math.random()*16777215).toString(16);
-        this.style.backgroundColor = '#' + randomColor;
-    } else if ((pointerDown) && (eraser.clicked = true)) {
+    document.body.addEventListener('pointerdown', function(event) {
+        if((event.target.matches('#color-picker') && (pointerDown))){
+            this.style.backgroundColor = colorPicker.value;
+        } else if((event.target.matches('.rainbow') && (pointerDown))) {
+            let randomColor = Math.floor(Math.random()*16777215).toString(16);
+            this.style.backgroundColor = '#' + randomColor;
+        } else if((event.target.matches('.eraser') && (pointerDown))) {
             this.style.backgroundColor = 'white';
-    } 
+        }
+    });
             
 };
 
