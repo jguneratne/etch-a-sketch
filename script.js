@@ -92,10 +92,10 @@ guideLines.onpointerleave = () => pointerDown = false;
             this.style.backgroundColor = '#' + randomColor;
         } else if((event.target.matches('.eraser') && (pointerDown))) {
             this.style.backgroundColor = 'white';
-        }
+        } 
     });
-            
-};
+
+}
 
 
 
