@@ -22,23 +22,19 @@
 
             <div class="selection">
                 <label for="colorInput">Color Picker</label>
-                <input type="color" id="color-picker" value="#500a8a">
+                <input type="color" id="color-picker" value="#500a8a" onclick="getColor('colorPicker')">
             </div>
 
             <div class="selection">
-                <button class="grey">Grey Scale</button>
+                <button class="grey" onclick="getColor('grey')">Grey Scale</button>
             </div>
             
             <div class="selection">
-                <button class="rainbow">Rainbow</button>
+                <button class="rainbow" onclick="getColor('random')">Rainbow</button>
             </div>
             
             <div class="selection">
-                <button class="pastel">Pastels</button>
-            </div>
-            
-            <div class="selection">
-                <button class="eraser">Eraser</button>
+                <button class="eraser" onclick="getColor('eraser')">Eraser</button>
             </div>
             
         </div>
