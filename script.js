@@ -79,7 +79,7 @@ guideLines.onpointerleave = () => pointerDown = false;
  function draw() {
 
     const colorPicker = document.getElementById('color-picker');
-    let greyScale = document.getElementsByClassName('grey');
+    let shading = document.getElementsByClassName('shading');
     const rainbow = document.getElementsByClassName('rainbow');
     const eraser = document.getElementsByClassName('eraser');
 
@@ -91,9 +91,9 @@ guideLines.onpointerleave = () => pointerDown = false;
             this.style.backgroundColor = '#' + randomColor;
          } else if(color === 'colorPicker') {
             this.style.backgroundColor = colorPicker.value;
-        } else if (color === 'grey') {
-            let greyArray = [0x000000, 0x0a0a0a, 0x141414, 0x1e1e1e, 0x282828, 0x323232, 0x3b3b3b, 0x454545, 0x4f4f4f, 0x595959, 0x636363, 0x6c6c6c, 0x767676, 0x808080, 0x8a8a8a, 0x949494, 0x9d9d9d, 0xa7a7a7, 0xb1b1b1, 0xbbbbbb, 0xc5c5c5, 0xcecece, 0xd8d8d8, 0xe2e2e2, 0xececec, 0xf6f6f6];
-            greyScale = greyArray[Math.floor(Math.random() * greyArray.length)];
+        } else if (color === 'shading') {
+            this.style.backgroundColor = 'black';
+            this.style.opacity = (parseInt(this.style.opacity) || 0) + 0.2;
         } else if (color === 'eraser') {
             this.style.backgroundColor = 'white';
         } 
@@ -104,8 +104,12 @@ guideLines.onpointerleave = () => pointerDown = false;
 
 function getColor(colorChoice) {
     color = colorChoice; 
-}
+};
 
+function resetGrid() {
+    clearBtn.addEventListener('pointerdown', makeGrid);
+}
+;
 
 // CALL FUNCTIONS
 
