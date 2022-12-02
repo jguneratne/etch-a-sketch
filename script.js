@@ -24,25 +24,27 @@ function makeGrid(cellCount) {
     //Setup the guide lines
     for(let i = 0; i < columns; i++) {
         let column = document.createElement('div');
-        column.classList.add('column' , 'column-border');
+        column.classList.add('column' , 'column-outline');
+        column.style.backgroundColor = '#ffffff'
         guideLines.appendChild(column);
 
         toggleGuideBtn.addEventListener('pointerdown', function() {
-            column.classList.toggle('column-border');
+            column.classList.toggle('column-outline');
         });
 
         for(let j = 0; j < rows; j++) {
             let row = document.createElement('div'); 
-            row.classList.add('row', 'row-border');
+            row.dataColor = 0; 
+            row.classList.add('row', 'row-outline');
+            row.style.backgroundColor = '#ffffff'
             column.appendChild(row);
 
             toggleGuideBtn.addEventListener('pointerdown', function() {
-                row.classList.toggle('row-border');
+                row.classList.toggle('row-outline');
             });
 
             row.addEventListener('pointerover', draw);
-            row.style.backgroundColor = 'white';
-
+            draw(row);
         }
     }
 };
@@ -59,15 +61,13 @@ function makeGrid(cellCount) {
     }
 
     slider.addEventListener('input', function() {
-        guideLines.innerHTML = ""
+        guideLines.textContent = ""
         makeGrid(slider.value);
 
     })
 
     makeGrid(cellCount);
 };
-
-
 
     // Drawing Functions
 
@@ -76,12 +76,10 @@ guideLines.onpointerup = () => pointerDown = false;
 guideLines.onpointerleave = () => pointerDown = false;
 
 
- function draw() {
+ function draw(row) {
 
     const colorPicker = document.getElementById('color-picker');
-    let shading = document.getElementsByClassName('shading');
-    const rainbow = document.getElementsByClassName('rainbow');
-    const eraser = document.getElementsByClassName('eraser');
+    let greyArray = ['#ffffff', '#eeeeee', '#dddddd', '#cccccc', '#bbbbbb', '#aaaaaa', '#999999', '#888888', '#777777', '#666666', '#555555', '#444444', '#333333', '#222222', '#111111', '#000000'];
 
     if(!pointerDown) return;
 
@@ -92,10 +90,11 @@ guideLines.onpointerleave = () => pointerDown = false;
          } else if(color === 'colorPicker') {
             this.style.backgroundColor = colorPicker.value;
         } else if (color === 'shading') {
-            this.style.backgroundColor = 'black';
-            this.style.opacity = (parseInt(this.style.opacity) || 0) + 0.2;
+            this.style.backgroundColor = greyArray[Math.min(++this.dataColor, 15)];
+        } else if (color === 'lighten') {
+            this.style.backgroundColor = greyArray[Math.min(--this.dataColor, 15)];
         } else if (color === 'eraser') {
-            this.style.backgroundColor = 'white';
+            this.style.backgroundColor = '#ffffff';
         } 
    
     }
@@ -106,12 +105,13 @@ function getColor(colorChoice) {
     color = colorChoice; 
 };
 
-function resetGrid() {
-    clearBtn.addEventListener('pointerdown', makeGrid);
-}
-;
+
+// function resetGrid() {
+    
+// };
 
 // CALL FUNCTIONS
 
 makeGrid();
 rangeSliderControl();
+//resetGrid();
