@@ -63,23 +63,14 @@ body {
     touch-action: none;
 }
 
+.column-outline, 
+.row-outline {
+    outline: 1px solid black;
+}
   
-  .column-border:first-of-type {
-    border-top: 1px solid black;
-  }
-
-.column-border {
-    border: none
-}
-
-.row-border {
-    border: 1px solid rgba(34, 34, 34);
-    border-collapse: collapse;
-}
 
 .box {
     display: flex;
-    /* flex-direction: column; */
     justify-content: space-between;
     align-items: center;
     margin: 15px;
@@ -151,7 +142,6 @@ body {
     font-size: 18px;
 }
 
-
 .slider {
     -webkit-appearance: none;
     width: 100%;
@@ -190,8 +180,6 @@ p {
     text-align: center;
 }
 
-
-
 .toggle {
     display: flex;
     align-items: center;    
@@ -203,7 +191,6 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* width: 520px; */
     border: 1px darkgray solid;
 } 
 
