@@ -44,6 +44,10 @@ function makeGrid(cellCount) {
             });
 
             row.addEventListener('pointerover', draw);
+
+            clearBtn.addEventListener('pointerdown', function() {
+                row.style.backgroundColor = '#ffffff';
+            })
         }
     }
 };
@@ -96,6 +100,7 @@ guideLines.onpointerleave = () => pointerDown = false;
             this.style.backgroundColor = '#ffffff';
         } 
     }
+
 };
 
 
@@ -104,9 +109,11 @@ function getColor(colorChoice) {
 };
 
 
-function resetGrid() {
-    
-};
+// function resetGrid() {
+//     clearBtn.addEventListener('pointerdown', function() {
+//         this.style.backgroundColor = this.dataColor;
+//     })
+// };
 
 // CALL FUNCTIONS
 
