@@ -44,7 +44,6 @@ function makeGrid(cellCount) {
             });
 
             row.addEventListener('pointerover', draw);
-            draw(row);
         }
     }
 };
@@ -76,7 +75,7 @@ guideLines.onpointerup = () => pointerDown = false;
 guideLines.onpointerleave = () => pointerDown = false;
 
 
- function draw(row) {
+ function draw() {
 
     const colorPicker = document.getElementById('color-picker');
     let greyArray = ['#ffffff', '#eeeeee', '#dddddd', '#cccccc', '#bbbbbb', '#aaaaaa', '#999999', '#888888', '#777777', '#666666', '#555555', '#444444', '#333333', '#222222', '#111111', '#000000'];
@@ -84,19 +83,18 @@ guideLines.onpointerleave = () => pointerDown = false;
     if(!pointerDown) return;
 
     if(pointerDown) {
-        if(color === 'random') {
+        if(color === 'colorPicker') {
+            this.style.backgroundColor = colorPicker.value;
+         } else if(color === 'random') {
             let randomColor = Math.floor(Math.random()*16777215).toString(16);
             this.style.backgroundColor = '#' + randomColor;
-         } else if(color === 'colorPicker') {
-            this.style.backgroundColor = colorPicker.value;
         } else if (color === 'shading') {
-            this.style.backgroundColor = greyArray[Math.min(++this.dataColor, 15)];
+            this.style.backgroundColor = greyArray[Math.min(++this.dataColor, 15)];  // dataColor refers to variable in line 37
         } else if (color === 'lighten') {
             this.style.backgroundColor = greyArray[Math.min(--this.dataColor, 15)];
         } else if (color === 'eraser') {
             this.style.backgroundColor = '#ffffff';
         } 
-   
     }
 };
 
@@ -106,9 +104,9 @@ function getColor(colorChoice) {
 };
 
 
-// function resetGrid() {
+function resetGrid() {
     
-// };
+};
 
 // CALL FUNCTIONS
 
