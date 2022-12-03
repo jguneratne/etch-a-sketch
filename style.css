@@ -11,6 +11,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #222222;
 }
 
 
@@ -33,11 +34,15 @@ body {
     height: 550px;
     width: 900px;
     border: 1px black solid;
+    border-radius: 50px;
+    background-color: #0d8596;
 }
 
 .title {
     font-family: Audiowide, cursive;
     font-size: 48px;
+    color: #04d435;
+    text-shadow: #f5f232 1px 0 20px;
 }
 
 .title-div {
@@ -215,6 +220,7 @@ button {
     margin-top: auto;
     padding: 10px;
     width: 100%;
+    background-color: #f5f232;
 }
 
 .my-info,
