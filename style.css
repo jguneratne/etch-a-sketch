@@ -23,6 +23,7 @@ body {
     margin: 0px;
     padding: 0px;
     border: 1px solid black;
+    box-shadow: 0 0 15px rgb(66, 78, 80);
     cursor: pointer;
     touch-action: none;
 }
@@ -63,7 +64,7 @@ body {
     width: 368px;
     margin: 0px;
     padding: 0px;
-    border: 1px black solid;
+    border: 1px solid black;
     background-size: 100%;
     cursor: pointer;
     touch-action: none;
@@ -170,6 +171,7 @@ body {
     height: 480px; 
     width: 608px;
     margin-top: 6px;
+    padding: 0px;
 } 
 
 .under-canvas {
@@ -178,6 +180,8 @@ body {
     justify-content: space-around;
     align-items: center;
     width: 608px;
+    margin-top: -20px;
+    margin-bottom: 10px;
 }
 
 .show-guide {
@@ -226,9 +230,9 @@ p {
     text-align: center;
 }
 
-.toggle {
+/* .toggle {
     font-family: 'Zen dots', cursive;
-}
+} */
 
 
 .clear-btn {
@@ -269,6 +273,7 @@ button:active {
     font-size: 14px;
     margin-top: auto;
     width: 100%;
+
 }
 
 .my-info,

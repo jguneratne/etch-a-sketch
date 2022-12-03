@@ -25,29 +25,29 @@ function makeGrid(cellCount) {
     for(let i = 0; i < columns; i++) {
         let column = document.createElement('div');
         column.classList.add('column');
-        if(toggleGuideBtn.checked) {
-            column.classList.add('column', 'column-outline');
-        } 
+        // if(toggleGuideBtn.checked) {                             // Disabling toggle features for now to improve performance
+        //     column.classList.add('column', 'column-outline');    // Will re-add when I understand event delegation better
+        // } 
         column.style.backgroundColor = '#ffffff'
         guideLines.appendChild(column);
 
-        toggleGuideBtn.addEventListener('pointerdown', function() {
-            column.classList.toggle('column-outline');
-        });
+        // toggleGuideBtn.addEventListener('pointerdown', function() {
+        //     column.classList.toggle('column-outline');
+        // });
 
         for(let j = 0; j < rows; j++) {
             let row = document.createElement('div'); 
             row.dataColor = 0; 
             row.classList.add('row');
-            if(toggleGuideBtn.checked){
-                row.classList.add('row-outline');
-            }
+            // if(toggleGuideBtn.checked){
+            //     row.classList.add('row-outline');
+            // }
             row.style.backgroundColor = '#ffffff'
             column.appendChild(row);
 
-            toggleGuideBtn.addEventListener('pointerdown', function() {
-                row.classList.toggle('row-outline');
-            });
+            // toggleGuideBtn.addEventListener('pointerdown', function() {
+            //     row.classList.toggle('row-outline');
+            // });
 
             row.addEventListener('pointerover', draw);
 
