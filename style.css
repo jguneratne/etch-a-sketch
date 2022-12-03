@@ -26,6 +26,28 @@ body {
     touch-action: none;
 }
 
+.box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 550px;
+    width: 900px;
+    border: 1px black solid;
+}
+
+.title {
+    font-family: Audiowide, cursive;
+    font-size: 48px;
+}
+
+.title-div {
+    width: 608px;
+    margin: 0px;
+    text-align: center;
+    align-items: center;
+    border: 1px red solid;
+}
+
 .canvas.div {
     display: flex;
     justify-content: center;
@@ -69,30 +91,12 @@ body {
 }
   
 
-.box {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 15px;
-    height: 518px;
-    width: 900px;
-    border: 1px black solid;
-}
-
-.title-div {
-    width: 608px;
-    margin: 0px;
-    text-align: center;
-    align-items: center;
-    border: 1px red solid;
-}
-
 .pickers,
 .sketch {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 518px;
+    height: 550px;
 }
 
 .pickers {
@@ -121,7 +125,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 402px; 
+    height: 480px; 
     width: 608px;
     margin-top: 6px;
 } 
