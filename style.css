@@ -135,6 +135,8 @@ body {
 .picker-text {
     margin-top: -20px;
     padding: 0px;
+    color: rgb(245, 242, 50, .8);
+    text-shadow: 0 0 5px rgba(249, 247, 137, 0.5);
 }
 
 .pickers {
@@ -142,6 +144,8 @@ body {
     margin: 0;
     width: 280px;
     font-family: 'Zen dots', cursive;
+    color: rgb(245, 242, 50, .8);
+    text-shadow: 0 0 5px rgba(249, 247, 137, 0.5);
 }
 
 .sketch {
@@ -155,6 +159,7 @@ body {
     align-items: center;
     font-family: 'Zen dots', cursive;
     padding: 0px;
+    
 }
 
 .canvas-div {
@@ -179,6 +184,8 @@ body {
     margin: 7px;
     font-family: sans-serif;
     font-size: 18px;
+    color: rgb(245, 242, 50, .8);
+    text-shadow: 0 0 5px rgba(249, 247, 137, 0.5);
 }
 
 .slider {
