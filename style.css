@@ -192,7 +192,7 @@ body {
     -webkit-appearance: none;
     width: 100%;
     height: 5px;
-    background: darkgray;
+    background: #b624c1;
     outline: none;
     opacity: 0.85;
     border-radius: 12px;
@@ -208,7 +208,7 @@ body {
     appearance: none;
     width: 15px;
     height: 15px;
-    background: rgb(36, 96, 181);
+    background: #04d435;
     border-radius: 50%;
     cursor: pointer; 
 }
@@ -216,7 +216,7 @@ body {
 .slider::-moz-range-thumb {
     width: 15px;
     height: 15px;
-    background: rgb(36, 96, 181);
+    background: #04d435;
     border-radius: 50%;
     cursor: pointer; 
 }
