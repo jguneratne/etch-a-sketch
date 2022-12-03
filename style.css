@@ -106,12 +106,42 @@ body {
     height: 550px;
 }
 
+
+.color-picker {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    height: 40px;
+    width: 40px;
+    border: none;
+    cursor: pointer;
+}
+
+.color-picker::webkit-color-swatch {
+    border-radius: 40px;
+}
+
+.color-picker::webkit-color-swatch-wrapper {
+    border-radius: 40px;
+    box-shadow:  0 20px rgb(245, 242, 50, .8);
+}
+
+.color-picker::moz-color-swatch {
+    border-radius: 40px;
+    border: 7px solid #000000;
+}
+
+.picker-text {
+    margin-top: -20px;
+    padding: 0px;
+}
+
 .pickers {
     justify-content: space-evenly;
     margin: 0;
     width: 280px;
     font-family: 'Zen dots', cursive;
-    
 }
 
 .sketch {

@@ -26,8 +26,11 @@
               </div>
 
             <div class="selection">
-                <label for="colorInput">Color Picker</label>
-                <input type="color" id="color-picker" value="#0f5efe" onclick="getColor('colorPicker')">
+                <input type="color" id="color-picker" class="color-picker" value="#ff5e00" onclick="getColor('colorPicker')">
+                <label for="colorInput"></label>
+            </div>
+            <div class="picker-text">
+                <p>Color Picker</p>
             </div>
 
             <div class="selection">
@@ -35,11 +38,11 @@
             </div>
 
             <div class="selection">
-                <button class="shading" onclick="getColor('shading')">Shading</button>
+                <button class="shading" onclick="getColor('shading')">Dark to Light</button>
             </div>
 
             <div class="selection">
-                <button class="lighten" onclick="getColor('lighten')">Lighten</button>
+                <button class="lighten" onclick="getColor('lighten')">Light to Dark</button>
             </div>
             
             <div class="selection">
@@ -65,7 +68,7 @@
                 </div>
 
                 <div class="clear">
-                    <button type="button" id="clear-btn">Clear</button>
+                    <button type="button" id="clear-btn" class="clear-btn">Clear</button>
                 </div>
             </div>
 
