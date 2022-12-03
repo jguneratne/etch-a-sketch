@@ -33,16 +33,19 @@ body {
     align-items: center;
     height: 550px;
     width: 900px;
-    border: 1px black solid;
+    margin: 15px;
+    padding: 5px;
+    
     border-radius: 50px;
     background-color: #0d8596;
+    box-shadow: 0px 0 20px 10px rgb(245, 242, 50), 0 0 50px 10px rgb(56, 78, 80) inset;
 }
 
 .title {
     font-family: Audiowide, cursive;
     font-size: 48px;
     color: #04d435;
-    text-shadow: #f5f232 1px 0 20px;
+    text-shadow: 0px 0 20px rgb(245, 242, 50, .8);
 }
 
 .title-div {
@@ -50,7 +53,6 @@ body {
     margin: 0px;
     text-align: center;
     align-items: center;
-    border: 1px red solid;
 }
 
 .canvas.div {
@@ -107,15 +109,14 @@ body {
 .pickers {
     justify-content: space-evenly;
     margin: 0;
-    width: 200px;
+    width: 280px;
     font-family: 'Zen dots', cursive;
-    border: 1px purple solid; 
+    
 }
 
 .sketch {
     justify-content: space-between;
     margin: 0;
-    border: 1px rgb(48, 37, 198) solid;
 }
 
 .selection {
@@ -124,7 +125,6 @@ body {
     align-items: center;
     font-family: 'Zen dots', cursive;
     padding: 0px;
-    border: 1px darkgrey solid;
 }
 
 .canvas-div {
@@ -143,12 +143,10 @@ body {
     justify-content: space-around;
     align-items: center;
     width: 608px;
-    border: 1px red solid;
 }
 
 .show-guide {
-    border: 1px aquamarine solid;
-    margin: 10px;
+    margin: 7px;
     font-family: sans-serif;
     font-size: 18px;
 }
@@ -200,13 +198,13 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px darkgray solid;
 } 
 
 button {
     width: 100px;
     height: 58px;
     border-radius: 20px;
+    margin: 0px;
     font-family: 'Zen dots', cursive;
 }
 
@@ -218,7 +216,6 @@ button {
     font-family: 'Zen dots', cursive;
     font-size: 14px;
     margin-top: auto;
-    padding: 10px;
     width: 100%;
     background-color: #f5f232;
 }
