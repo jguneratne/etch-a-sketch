@@ -24,7 +24,10 @@ function makeGrid(cellCount) {
     //Setup the guide lines
     for(let i = 0; i < columns; i++) {
         let column = document.createElement('div');
-        column.classList.add('column' , 'column-outline');
+        column.classList.add('column');
+        if(toggleGuideBtn.checked) {
+            column.classList.add('column', 'column-outline');
+        } 
         column.style.backgroundColor = '#ffffff'
         guideLines.appendChild(column);
 
@@ -35,7 +38,10 @@ function makeGrid(cellCount) {
         for(let j = 0; j < rows; j++) {
             let row = document.createElement('div'); 
             row.dataColor = 0; 
-            row.classList.add('row', 'row-outline');
+            row.classList.add('row');
+            if(toggleGuideBtn.checked){
+                row.classList.add('row-outline');
+            }
             row.style.backgroundColor = '#ffffff'
             column.appendChild(row);
 
@@ -109,14 +115,7 @@ function getColor(colorChoice) {
 };
 
 
-// function resetGrid() {
-//     clearBtn.addEventListener('pointerdown', function() {
-//         this.style.backgroundColor = this.dataColor;
-//     })
-// };
-
 // CALL FUNCTIONS
 
 makeGrid();
 rangeSliderControl();
-//resetGrid();
