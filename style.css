@@ -201,11 +201,26 @@ p {
 } 
 
 button {
-    width: 100px;
-    height: 58px;
-    border-radius: 20px;
+    width: 80px;
+    height: 80px;
+    border-radius: 80px;
     margin: 0px;
+    border: none;
+    box-shadow: 0 0 20px rgb(245, 242, 50, .8), 0 0 20px rgb(100, 72, 102) inset;
     font-family: 'Zen dots', cursive;
+    color: rgb(245, 242, 50, .8);
+    background-color: #b624c1;
+}
+
+.clear-btn{
+    width: 60px;
+    height: 60px;
+    border-radius: 60px;
+}
+
+button:active {
+    box-shadow: 0px 0 20px 10px rgb(245, 242, 50);
+    color: rgb(245, 242, 50);
 }
 
 
